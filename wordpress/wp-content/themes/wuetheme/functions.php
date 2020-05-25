@@ -40,13 +40,10 @@ function technomad_prefix_add_rest_orderby_params( $params ) {
  * include footer scripts
  **/
 function enqueue_footer_scripts() {
-	$theme_directory_name = get_template();
-
-
-	$appBundlePath           = ABSPATH . "/wp-content/themes/$theme_directory_name/app/app.bundle.js";
-	$babelPolyfillBundlePath = ABSPATH . "/wp-content/themes/$theme_directory_name/app/babelPolyfill.bundle.js";
-	$appBundleUrl            = "/wp-content/themes/$theme_directory_name/app/app.bundle.js";
-	$babelPolyfillBundleUrl  = "/wp-content/themes/$theme_directory_name/app/babelPolyfill.bundle.js";
+	$appBundlePath           = get_stylesheet_directory() . "/app/app.bundle.js";
+	$babelPolyfillBundlePath = get_stylesheet_directory() . "/app/babelPolyfill.bundle.js";
+	$appBundleUrl            = get_template_directory_uri() . "/app/app.bundle.js";
+	$babelPolyfillBundleUrl  = get_template_directory_uri() . "/app/babelPolyfill.bundle.js";
 
 	/**
 	 * append last edit timestamp to production bundles to be able to
